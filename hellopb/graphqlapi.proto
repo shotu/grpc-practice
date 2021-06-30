@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package hello;
+option go_package = "./grpc-practice/hellopb";
+
+message GraphqlapiRequest {
+    string id = 1;
+}
+
+message GraphqlapiResponse {
+    string id=1;
+    string name=2;
+}
+service UserService {
+    rpc GetUser(GraphqlapiRequest) returns (GraphqlapiResponse) {};
+}
